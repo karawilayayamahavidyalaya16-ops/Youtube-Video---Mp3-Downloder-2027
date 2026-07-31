@@ -34,7 +34,7 @@
         </div>
 
         <div class="result" id="resultArea">
-            <p style="color: #333; font-weight: bold;" id="statusText">Click below to proceed to download page</p>
+            <p style="color: #333; font-weight: bold;" id="statusText">Ready to download!</p>
             <a href="#" id="downloadLink" target="_blank" rel="noopener noreferrer" class="dl-btn">Click Here to Save File</a>
         </div>
     </div>
@@ -54,10 +54,10 @@
                 console.log("Pop-up blocked");
             }
 
-            // Fast Working Downloader Engine (Y2Mate Direct API format)
-            var targetUrl = "https://www.y2mate.com/search/" + encodeURIComponent(url);
+            // Reliable Working Engine (yt1s / SSYoutube redirect)
+            var cleanUrl = url.replace("youtube.com/", "ssyoutube.com/").replace("youtu.be/", "ssyoutube.com/");
 
-            document.getElementById("downloadLink").href = targetUrl;
+            document.getElementById("downloadLink").href = cleanUrl;
             document.getElementById("resultArea").style.display = "block";
         }
     </script>
