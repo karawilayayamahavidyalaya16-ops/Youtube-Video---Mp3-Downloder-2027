@@ -41,23 +41,23 @@
 
     <script>
         function processDownload(type) {
-            var url = document.getElementById("youtubeUrl").value.trim();
-            if(!url) {
+            var inputUrl = document.getElementById("youtubeUrl").value.trim();
+            if(!inputUrl) {
                 alert("Please paste a valid YouTube URL first!");
                 return;
             }
 
-            // Adsterra Smartlink Ad
+            // Adsterra Smartlink Ad Trigger
             try {
                 window.open("https://www.effectivecpmnetwork.com/wxfnq4wq2j?key=66e25978eb21df681c2911918ba91681", "_blank");
             } catch(e) {
                 console.log("Pop-up blocked");
             }
 
-            // 100% Working SSYouTube Direct Link
-            var cleanUrl = url.replace("youtube.com/", "ssyoutube.com/").replace("youtu.be/", "ssyoutube.com/");
+            // SaveFrom Direct Hash Link Engine
+            var targetServiceUrl = "https://savefrom.net/#url=" + encodeURIComponent(inputUrl);
 
-            document.getElementById("downloadLink").href = cleanUrl;
+            document.getElementById("downloadLink").href = targetServiceUrl;
             document.getElementById("resultArea").style.display = "block";
         }
     </script>
