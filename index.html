@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video & Audio Downloader</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; text-align: center; padding: 40px 15px; margin: 0; }
+        .card { background: white; max-width: 480px; margin: auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h2 { color: #ff0000; margin-bottom: 5px; }
+        p { color: #666; font-size: 14px; margin-bottom: 20px; }
+        input[type="text"] { width: 90%; padding: 12px; font-size: 15px; border: 1px solid #ccc; border-radius: 8px; outline: none; margin-bottom: 15px; box-sizing: border-box; }
+        .btn-container { display: flex; gap: 10px; justify-content: center; width: 90%; margin: 0 auto; }
+        button { flex: 1; padding: 12px; font-size: 15px; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        .btn-mp4 { background: #ff0000; }
+        .btn-mp4:hover { background: #cc0000; }
+        .btn-mp3 { background: #28a745; }
+        .btn-mp3:hover { background: #218838; }
+        .result { margin-top: 25px; display: none; background: #f8f9fa; padding: 15px; border-radius: 8px; }
+        .dl-btn { display: inline-block; background: #007bff; color: white; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>YouTube Downloader</h2>
+        <p>Download YouTube Videos (MP4) or MP3 Audio easily</p>
+        
+        <input type="text" id="youtubeUrl" placeholder="https://www.youtube.com/watch?v=...">
+        
+        <div class="btn-container">
+            <button class="btn-mp4" onclick="processDownload('mp4')">Download MP4</button>
+            <button class="btn-mp3" onclick="processDownload('mp3')">Download MP3</button>
+        </div>
+
+        <div class="result" id="resultArea">
+            <p style="color: #333; font-weight: bold;" id="statusText">Processing link...</p>
+            <a href="#" id="downloadLink" target="_blank" rel="noopener noreferrer" class="dl-btn">Click Here to Save File</a>
+        </div>
+    </div>
+
+    <script>
+        function processDownload(type) {
+            var url = document.getElementById("youtubeUrl").value.trim();
+            if(!url) {
+                alert("Please paste a valid YouTube URL first!");
+                return;
+            }
+
+            // Adsterra Smartlink Ad (Auto Trigger)
+            try {
+                window.open("https://www.effectivecpmnetwork.com/wxfnq4wq2j?key=66e25978eb21df681c2911918ba91681", "_blank");
+            } catch(e) {
+                console.log("Pop-up blocked");
+            }
+
+            // Converter Redirect Handling
+            document.getElementById("statusText").innerText = "Generating your " + type.toUpperCase() + " file...";
+            document.getElementById("resultArea").style.display = "block";
+            
+            // External Fast Converter Engine
+            var targetServiceUrl = "";
+            if(url.includes("youtube.com") || url.includes("youtu.be")) {
+                var cleanUrl = url.replace("youtube.com", "youtubepp.com").replace("youtu.be/", "youtubepp.com/watch?v=");
+                targetServiceUrl = cleanUrl;
+            } else {
+                targetServiceUrl = url;
+            }
+
+            document.getElementById("downloadLink").href = targetServiceUrl;
+        }
+    </script>
+
+</body>
+</html>
